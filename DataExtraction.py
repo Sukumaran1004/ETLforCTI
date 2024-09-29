@@ -6,7 +6,9 @@ import csv
 
 #Function to fetch the data from AbuseIPdb
 def fetch_AbuseIPDB(api_key):
-    result_file = "Data/abuseipdb.csv"
+    result_file = "Data/abuseipdb.csv" #location to store the fetched data
+    
+    #list of ip address to check
     ip_address = [
     '8.8.8.8', '1.1.1.1', '208.67.222.222', '208.67.220.220', '9.9.9.9', 
     '198.51.100.1', '203.0.113.1', '185.228.168.9', '185.228.169.9', '77.88.8.1',
@@ -15,27 +17,29 @@ def fetch_AbuseIPDB(api_key):
     ]   
 
     url = 'https://api.abuseipdb.com/api/v2/check'
+    # Headers for the API request
     headers = {
     'Accept': 'application/json',
         'Key': api_key
     }
+
+    #list of csv columns to fetch data 
     csv_columns = ['ipAddress','isPublic','ipVersion','isWhitelisted','abuseConfidenceScore','countryCode','usageType','isp','domain','hostnames','totalReports','numDistinctUsers','lastReportedAt','isTor']
-    headers = {
-    'Accept': 'application/json',
-    'Key': api_key
-    }
     with open(result_file,"a", newline='') as filecsv:
         writer = csv.DictWriter(filecsv, fieldnames=csv_columns)
         writer.writeheader()
+
+    # Loop through each IP address
     for ip in ip_address:
         parameters = {
             'ipAddress': ip,
-            'maxAgeInDays': '90'}
+            'maxAgeInDays': '90' #Check for reports within the last 90 days
+            }
 
         respnse= requests.get( url=url,headers=headers,params=parameters)
         json_Data = json.loads(respnse.content)
         json_main = json_Data["data"]
-        with open(result_file,"a", newline='')as filecsv:
+        with open(result_file,"a", newline='')as filecsv: #to store the data in csv format
             writer= csv.DictWriter(filecsv,fieldnames=csv_columns)
             writer.writerow(json_main)
 
