@@ -1,4 +1,3 @@
-ipAddress,isPublic,ipVersion,isWhitelisted,abuseConfidenceScore,countryCode,usageType,isp,domain,hostnames,totalReports,numDistinctUsers,lastReportedAt
 ipAddress,isPublic,ipVersion,isWhitelisted,abuseConfidenceScore,countryCode,usageType,isp,domain,hostnames,totalReports,numDistinctUsers,lastReportedAt,isTor
 8.8.8.8,True,4,True,0,US,Data Center/Web Hosting/Transit,Google LLC,google.com,['dns.google'],15,8,2024-09-28T08:10:01+00:00,False
 1.1.1.1,True,4,True,0,AU,Content Delivery Network,APNIC and CloudFlare DNS Resolver Project,cloudflare.com,['one.one.one.one'],117,58,2024-09-29T02:26:17+00:00,False
