@@ -27,7 +27,7 @@ def displayTopKMalicious(collection):
 def TrendDataAnalysis(collection):
     # Calculate the date range for the last week
     end_date = datetime.now()
-    start_date = end_date - timedelta(days=7)
+    start_date = end_date - timedelta(days=14)
 
     # Query for the number of new threats reported each day
     trend_analysis = collection.find({
