@@ -22,7 +22,14 @@ def displayTopKMalicious(collection):
     ])
 
     top_ips_df = pd.DataFrame(list(top_ips))
-    return top_ips_df
+    # Visualizing Top 5 IPs
+    plt.figure(figsize=(10, 6))
+    plt.bar(top_ips_df["_id"], top_ips_df["total_reports"], color='blue')
+    plt.xlabel('IP Address')
+    plt.ylabel('Total Reports')
+    plt.title('Top 5 Most Frequently Reported Malicious IPs')
+    plt.xticks(rotation=45)
+    plt.show()
 
 def TrendDataAnalysis(collection):
     # Calculate the date range for the last week
@@ -69,7 +76,7 @@ def TrendDataAnalysis(collection):
 def retrieve_data(client):
     db = client['SecurityData']
     collection = db['ipAddress']
-    top_ips = displayTopKMalicious(collection)
+    displayTopKMalicious(collection)
     TrendDataAnalysis(collection)
 
 
