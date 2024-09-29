@@ -18,15 +18,12 @@ def create_DB(client,dataPath):
 
     cleaned_data = pd.read_csv(dataPath)
     db = client['SecurityData']  
-    collection = db['ipAddress']  
+    collection = db['ipAddress1']  
 
     #Prepare Data for Insertion
     records = cleaned_data.to_dict(orient='records')
     #Insert Data into MongoDB
     collection.insert_many(records)
-
-    #Create an index on the ip_address field
-    collection.create_index('ip_address', unique=True)
 
     # Verify Data and Indexing
     print(f"Number of documents in collection: {collection.count_documents({})}")
