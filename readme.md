@@ -49,27 +49,28 @@ This repository contains a Python-based system that fetches, processes, and visu
 1. Fetching Data from APIs
     The script collects data for a predefined list of IP addresses from AbuseIPDB and VirusTotal. You will need your respective API keys to access their data.
 
-    ## AbuseIPDB Data
+    ### AbuseIPDB Data
         The fetch_AbuseIPDB function fetches abuse reports from AbuseIPDB, including details such as:
             1. Country
             2. Abuse Confidence Score
             3. ISP
             4. Total Reports
         To fetch data from AbuseIPDB:
-        ```bash
+            ```bash
             fetch_AbuseIPDB('your_abuseipdb_api_key')
-    ## VirusTotal Data
+    ### VirusTotal Data
         The fetch_virustotal function retrieves data on:
 
             1. Detected URLs
             2. Detected Malicious Samples
             3. Malicious Engines
         To fetch data from VirusTotal:
-        ```bash
+            ```bash
             fetch_virustotal('your_virustotal_api_key')
     ### Output Files
         abuseipdb.csv: Stores AbuseIPDB data.
         totalvirus.csv: Stores VirusTotal data.
+
 2. Data Transformation
     After fetching the data, the transformation function Tranformation(file1, file2) processes, cleans, and merges the datasets. This involves:
     1. Standardizing IP addresses
@@ -79,14 +80,14 @@ This repository contains a Python-based system that fetches, processes, and visu
         ```bash
         Tranformation('Data/abuseipdb.csv', 'Data/totalvirus.csv')
 3. MongoDB Integration
-Once the data is cleaned, it can be stored in a MongoDB database for further analysis. Use the provided MongoDB connection URI to connect to the database and insert data.
+    Once the data is cleaned, it can be stored in a MongoDB database for further analysis. Use the provided MongoDB connection URI to connect to the database and insert data.
 
-To connect to MongoDB:
-    ```bash
-    client = MongoDb_Connect('your_mongodb_uri')
-To store the cleaned data in MongoDB:
-    ```bash
-    create_DB(client, 'Data/Cleaned_Data.csv')
+    To connect to MongoDB:
+        ```bash
+        client = MongoDb_Connect('your_mongodb_uri')
+    To store the cleaned data in MongoDB:
+        ```bash
+        create_DB(client, 'Data/Cleaned_Data.csv')
 4. Visualization and Analysis
     The system includes two primary visualizations:
 
