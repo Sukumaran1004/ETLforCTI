@@ -21,6 +21,7 @@ This repository contains a Python-based system that fetches, processes, and visu
 ## Installation
 
 1. Clone this repository:
+   ```bash
    git clone https://github.com/Sukumaran1004/ETLforCTI.git
 2. Install required Python packages:
     pip install -r requirements.txt
