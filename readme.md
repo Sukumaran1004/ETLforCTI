@@ -23,6 +23,25 @@ This repository contains a Python-based system that fetches, processes, and visu
 1. Clone this repository:
    ```bash
    git clone https://github.com/Sukumaran1004/ETLforCTI.git
-2. Install required Python packages:
+
+## Requirements
+    To successfully run this project, ensure you have the following:
+
+1. Python 3.7+
+2. MongoDB Atlas (or a local MongoDB instance)
+3. API Keys:
+    1. AbuseIPDB API Key
+    2. VirusTotal API Key
+4. Required Python packages:
+    1. pandas
+    2. requests
+    3. json
+    4. csv
+    5. pymongo
+    6. matplotlib
+    7. seaborn
+5. You can install all dependencies by running:
+    ```bash
     pip install -r requirements.txt
+
 
