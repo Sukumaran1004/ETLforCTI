@@ -49,7 +49,7 @@ This repository contains a Python-based system that fetches, processes, and visu
 1. Fetching Data from APIs
     The script collects data for a predefined list of IP addresses from AbuseIPDB and VirusTotal. You will need your respective API keys to access their data.
 
-    ### AbuseIPDB Data
+    1. AbuseIPDB Data
         The fetch_AbuseIPDB function fetches abuse reports from AbuseIPDB, including details such as:
             1. Country
             2. Abuse Confidence Score
@@ -58,7 +58,7 @@ This repository contains a Python-based system that fetches, processes, and visu
         To fetch data from AbuseIPDB:
             ```bash
             fetch_AbuseIPDB('your_abuseipdb_api_key')
-    ### VirusTotal Data
+    2. VirusTotal Data
         The fetch_virustotal function retrieves data on:
 
             1. Detected URLs
@@ -67,7 +67,7 @@ This repository contains a Python-based system that fetches, processes, and visu
         To fetch data from VirusTotal:
             ```bash
             fetch_virustotal('your_virustotal_api_key')
-    ### Output Files
+    3. Output Files
         abuseipdb.csv: Stores AbuseIPDB data.
         totalvirus.csv: Stores VirusTotal data.
 
@@ -94,7 +94,7 @@ This repository contains a Python-based system that fetches, processes, and visu
     Top 5 Malicious IPs
     Displays the top 5 IPs with the most abuse reports:
         ```bash
-            displayTopKMalicious(collection)
+         displayTopKMalicious(collection)
     Trend Analysis
     Shows the trend of new threats reported over the past 14 days:
         ```bash
